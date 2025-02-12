@@ -1,36 +1,42 @@
-const path = require('path');  // Importa el módulo 'path'
+const path = require('path');  
+const HtmlWebpackPlugin = require('html-webpack-plugin');  
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),  // Ruta para el directorio de salida
-    filename: '[name].[contenthash].js',  // Nombre con hash para control de cache
+    path: path.resolve(__dirname, 'build'), 
+    filename: '[name].[contenthash].js', 
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,  // Para archivos .js y .jsx
-        exclude: /node_modules/,  // Excluye la carpeta node_modules
+        test: /\.(js|jsx)$/, 
+        exclude: /node_modules/,  
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],  // Configura los presets de Babel
+            presets: ['@babel/preset-env', '@babel/preset-react'], 
           },
         },
       },
       {
-        test: /\.css$/,  // Para archivos .css
-        use: ['style-loader', 'css-loader'],  // Carga los archivos CSS
+        test: /\.css$/, 
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],  // Permite que Webpack reconozca archivos .js y .jsx
+    extensions: ['.js', '.jsx'], 
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',  // Divide el código en múltiples archivos automáticamente
+      chunks: 'all', 
     },
   },
-  mode: 'production',  // Modo de producción
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
+  mode: 'production', 
 };

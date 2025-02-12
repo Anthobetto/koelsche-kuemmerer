@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { WelcomePage } from './pages/WelcomePage.jsx';
 import { Navbar } from './components/Navbar.jsx';
 import { Contact } from './pages/Contact.jsx';
-import { Services } from './pages/360-Grad-Service.jsx';
 import { Grad } from './pages/Grad.jsx';
 import { Überuns } from './pages/Überuns.jsx';
 import { Footer } from "./components/Footer.jsx";
@@ -21,7 +20,6 @@ export const Layout = () => {
                         <Routes>
                             <Route element={<WelcomePage />} path="/" />
                             <Route element={<Contact />} path="/kontakt" />
-                            <Route element={<Services />} path="Service" />
                             <Route element={<Grad />} path="360-grad-service" />
                             <Route element={<Überuns />} path="über-uns" />
                             <Route element={<Datenschutz />} path="datenschutz" />
