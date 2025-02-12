@@ -14,3 +14,5 @@ __pycache__/
 # Ignorar imágenes pero mantener la carpeta
 public/images/
 node_modules
+build/
+.DS_Store
