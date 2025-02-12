@@ -1,0 +1,16 @@
+# Ignorar el archivo .env
+.env
+
+# Ignorar dependencias y caché
+venv/
+__pycache__/
+
+# Otros archivos temporales
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Ignorar imágenes pero mantener la carpeta
+public/images/
+node_modules
