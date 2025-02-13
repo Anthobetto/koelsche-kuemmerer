@@ -7,12 +7,12 @@ import { Contact } from './pages/Contact.jsx';
 import { Grad } from './pages/Grad.jsx';
 import { Überuns } from './pages/Überuns.jsx';
 import { Footer } from "./components/Footer.jsx";
-import { AppProvider } from './store/appContext.js'; // Importamos el Provider
+import { AppProvider } from './store/appContext.js';
 import { Datenschutz } from './pages/Datenschutz.jsx';
 
 export const Layout = () => {
     return (
-        <AppProvider> {/* Aquí envolvemos la app en el AppProvider */}
+        <AppProvider>
             <div className="d-flex flex-column min-vh-100">
                 <BrowserRouter>
                     <Navbar />

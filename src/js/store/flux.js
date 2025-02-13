@@ -1,11 +1,11 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
-            contactStatus: null  // Estado del envío del formulario
+            contactStatus: null
         },
         actions: {
             sendContactForm: async (data) => {
-                const response = await fetch("http://localhost:5000/api/contact", {
+                const response = await fetch("https://koelsche-kuemmerer.koeln/api/contact", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -18,5 +18,4 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
     };
 };
-
 export default getState;

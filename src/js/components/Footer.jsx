@@ -23,7 +23,7 @@ export const Footer = () => {
                         </Link>
                     </li>
                     <li className="ms-3">
-                        <Link className="text-white" to="https://wa.me/491722956731?text=Hallo,%20ich%20würde%20gerne%20Informationen%20über%20Ihre%20Dienstleistungen%20anforder">
+                        <Link className="text-white" to="https://wa.me/491722956731?text=Hallo,%20ich%20würde%20gerne%20Informationen%20über%20Ihre%20Dienstleistungen%20anfordern">
                             <i className="fab fa-whatsapp" style={{ fontSize: "24px" }}></i>
                         </Link>
                     </li>

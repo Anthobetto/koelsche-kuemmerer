@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { motion } from "framer-motion";
 
 export const WelcomePage = () => {
 	return (
-		<div className="d-flex flex-column align-items-center justify-content-center text-center">
-			<img 
-				src="/images/Willkomenn.png" 
-				alt="Welcome Image" 
-				style={{ maxWidth: "100%" }} 
-			/>
+		<div className="welcome-container">
+			<section
+				className="min-vh-100 w-100 overflow-hidden"
+				style={{
+					background: `radial-gradient(circle, rgba(64,181,181,1) 0%, rgba(53,163,163,1) 50%, rgba(42,122,122,1) 100%)`,
+				}}
+			>
+				<div className="container text-center pt-5 pb-5">
+					{/* Imagen animada framer-motion */}
+					<motion.div
+						initial={{ scale: 0.8, opacity: 0 }}
+						animate={{ scale: 1, opacity: 1 }}
+						transition={{ duration: 0.8, ease: "easeOut" }}
+						className="d-flex justify-content-center align-items-center mb-4"
+					>
+						<img
+							src="/images/backgroud.png"
+							alt="Köllsche Klümmerer Team"
+							className="img-fluid"
+							style={{ maxWidth: "600px", width: "100%" }}
+						/>
+					</motion.div>
+
+					{/* Imagen animada framer-motion */}
+					<motion.div
+						initial={{ y: 50, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						transition={{ delay: 0.5, duration: 0.8 }}
+						className="text-center"
+					>
+						<h2 className="text-white display-4">
+							WILLKOMMEN AUF UNSERER WEB-SITE!
+						</h2>
+						<p className="text-white">SCHÖN DAT DE DO BES!</p>
+					</motion.div>
+				</div>
+			</section>
 		</div>
 	);
 };

@@ -3,21 +3,19 @@ import React, { useState, useContext } from "react";
 import { AppContext } from "../store/appContext";
 
 export const Contact = () => {
-    const { actions } = useContext(AppContext);  // Accedemos a las acciones del contexto
+    const { actions } = useContext(AppContext); 
     const [formData, setFormData] = useState({ email: "", message: "" });
-    const [loading, setLoading] = useState(false); // Para manejar el estado de carga
+    const [loading, setLoading] = useState(false); 
 
     const handleChange = ({ target }) =>
         setFormData({ ...formData, [target.name]: target.value });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);  // Indicamos que se está enviando el formulario
-
-        // Llamamos a la acción sendContactForm con los datos del formulario
-        actions.sendContactForm(formData);
-
-        // Limpiamos el formulario y terminamos el estado de carga
+        setLoading(true);  
+    
+        actions.sendContactForm(formData); 
+    
         setFormData({ email: "", message: "" });
         setLoading(false);
     };
@@ -66,7 +64,7 @@ export const Contact = () => {
                                     <button 
                                         type="submit" 
                                         className="btn btn-outline-info" 
-                                        disabled={loading}  // Deshabilitamos el botón mientras se envía el formulario
+                                        disabled={loading} 
                                     >
                                         {loading ? "Senden..." : "Senden"} <i className="fa-solid fa-paper-plane"></i>
                                     </button>
