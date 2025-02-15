@@ -3,6 +3,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require __DIR__ . '/vendor/autoload.php'; 
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = isset($_POST["name"]) ? htmlspecialchars($_POST["name"]) : "Ungenannt";
     $email = isset($_POST["email"]) ? htmlspecialchars($_POST["email"]) : "Keine E-Mail";
@@ -13,10 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $to = $_ENV['juergen.loschke@koelsche-kuemmerer.koeln'];
+    $to = $_ENV['MAIL_TO']; 
     $subject = "Neue Formularmeldung";
 
-    $headers = "From: " . $_ENV['kontakt@koelsche-kuemmerer.koeln'] . "\r\n" .
+    $headers = "From: " . $_ENV['MAIL_FROM'] . "\r\n" .
                "Reply-To: " . $email . "\r\n" .
                "Content-Type: text/plain; charset=UTF-8\r\n";
 
