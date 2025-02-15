@@ -12,7 +12,6 @@ export const WelcomePage = () => {
 				}}
 			>
 				<div className="container text-center pt-5 pb-5">
-					{/* Imagen animada framer-motion */}
 					<motion.div
 						initial={{ scale: 0.8, opacity: 0 }}
 						animate={{ scale: 1, opacity: 1 }}
@@ -27,7 +26,6 @@ export const WelcomePage = () => {
 						/>
 					</motion.div>
 
-					{/* Imagen animada framer-motion */}
 					<motion.div
 						initial={{ y: 50, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}

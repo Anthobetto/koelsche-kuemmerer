@@ -4,22 +4,21 @@ export const Contact = () => {
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+        e.preventDefault(); 
         setLoading(true);
 
-        const formData = new FormData(e.target); // Recoger los datos del formulario
-
+        const formData = new FormData(e.target); 
         try {
             const response = await fetch("https://koelsche-kuemmerer.koeln/send_email.php", {
-                method: "POST", // Enviar datos como POST
-                body: formData, // Los datos del formulario van en el cuerpo de la solicitud
+                method: "POST",
+                body: formData,
             });
 
-            const data = await response.json(); // Respuesta JSON del servidor
+            const data = await response.json();
 
             if (data.success) {
                 alert("Mail gesendet");
-                e.target.reset(); // Limpiar el formulario
+                e.target.reset();
             } else {
                 alert("Fehler beim Senden der E-Mail. Bitte versuchen Sie es erneut");
             }
@@ -49,7 +48,7 @@ export const Contact = () => {
                                             type="text"
                                             className="form-control"
                                             id="name"
-                                            name="name" // Asegúrate de que el nombre es "name"
+                                            name="name"
                                             placeholder="Dein Name"
                                             required
                                         />
@@ -66,7 +65,7 @@ export const Contact = () => {
                                             type="email"
                                             className="form-control"
                                             id="email"
-                                            name="email" // Asegúrate de que el nombre es "email"
+                                            name="email"
                                             placeholder="name@beispiel.de"
                                             required
                                         />
@@ -78,7 +77,7 @@ export const Contact = () => {
                                     <textarea
                                         className="form-control"
                                         id="message"
-                                        name="message" // Asegúrate de que el nombre es "message"
+                                        name="message"
                                         rows="5"
                                         required
                                     ></textarea>

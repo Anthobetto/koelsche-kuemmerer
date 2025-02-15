@@ -5,7 +5,6 @@ export const Überuns = () => {
     <div className="d-flex flex-column align-items-center justify-content-center text-center px-3 py-4">
       <hr />
       <div className="row justify-content-center">
-        {/* Columna de texto */}
         <div className="col-12 col-md-6 text-center text-md-end">
           <h5 style={{ color: "#00cccc" }}>Wer wir sind?</h5>
           <p>Wir sind ein junges Unternehmen, das Sie in den verschiedensten Lebenssituationen gerne unterstützen möchte.</p>
@@ -22,7 +21,6 @@ export const Überuns = () => {
           <h5>Sprechen Sie uns an - Wir kümmern uns drum.</h5>
         </div>
 
-        {/* Columna de la imagen */}
         <div className="col-10 col-md-4 d-flex justify-content-center">
           <img src="/images/Willkommen-Home.png" alt="Koelsche-Kuemmerer" className="img-fluid" />
         </div>
