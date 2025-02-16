@@ -1,12 +1,10 @@
-# Ignorar el archivo .env
 .env
+public/send_email.php
 
-# Ignorar dependencias y caché
 node_modules/
 venv/
 __pycache__/
 
-# Otros archivos temporales
 *.log
 .DS_Store
 build/
