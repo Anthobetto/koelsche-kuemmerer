@@ -5,26 +5,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-function cargarEnv($file) {
-    if (!file_exists($file)) {
-        return;
-    }
-    
-    $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        if (strpos($line, '#') === 0) continue;
+require_once __DIR__ . '/vendor/autoload.php';
 
-        list($key, $value) = explode('=', $line, 2);
-        $key = trim($key);
-        $value = trim($value);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-        putenv("$key=$value");
-        $_ENV[$key] = $value;
-        $_SERVER[$key] = $value;
-    }
-}
-
-cargarEnv(__DIR__ . '/.env');
+echo "<pre>";
+var_dump($_ENV);
+echo "</pre>";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = isset($_POST["name"]) ? htmlspecialchars($_POST["name"]) : "Ungenannt";
@@ -36,12 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $to = getenv('MAIL_DESTINATION');
-    $from = getenv('MAIL_ORIGIN');
-
-    if (!$to || !$from) {
-    die("Fehler: Konnte die .env-Variablen nicht laden");}
+    $to = $_ENV['MAIL_DESTINATION'];
+    $from = $_ENV['MAIL_ORIGIN'];
     
+    if (!$to || !$from) {
+        echo json_encode(["success" => false, "message" => "Fehler: Konnte die .env-Variablen nicht laden"]);
+        exit;
+    }
+
     $subject = "Neue Formularmeldung";
     $headers = "From: $from\r\n" .
                "Reply-To: " . $email . "\r\n" .
@@ -58,5 +48,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode(["success" => false, "message" => "Fehler: Keine POST-Anfrage"]);
 }
 
-ob_end_flush(); 
+ob_end_flush();
 ?>
