@@ -36,8 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $to = $_ENV['MAIL_DESTINATION'] ?? "juergen.loschke@koelsche-kuemmerer.koeln";
-    $from = $_ENV['MAIL_ORIGIN'] ?? "kontakt@koelsche-kuemmerer.koeln";
+    $to = getenv('MAIL_DESTINATION') ?: $_SERVER['MAIL_DESTINATION'] ?? null;
+    $from = getenv('MAIL_ORIGIN') ?: $_SERVER['MAIL_ORIGIN'] ?? null;
+
+    if (!$to || !$from) {
+     die("Fehler: Konnte die .env-Variablen nicht laden");}
     
     $subject = "Neue Formularmeldung";
     $headers = "From: $from\r\n" .
