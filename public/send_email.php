@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $to = getenv('EMAIL_DESTINO') ?: "juergen.loschke@koelsche-kuemmerer.koeln"; 
-    $from = getenv('EMAIL_ORIGEN') ?: "kontakt@koelsche-kuemmerer.koeln";  
+    $to = getenv('MAIL_DESTINATION') ?: "juergen.loschke@koelsche-kuemmerer.koeln"; 
+    $from = getenv('EMAIL_ORIGIN') ?: "kontakt@koelsche-kuemmerer.koeln";  
 
     $subject = "Neue Formularmeldung";
     $headers = "From: $from\r\n" .
