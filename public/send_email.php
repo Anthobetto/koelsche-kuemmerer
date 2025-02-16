@@ -36,11 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $to = getenv('MAIL_DESTINATION') ?: $_SERVER['MAIL_DESTINATION'] ?? null;
-    $from = getenv('MAIL_ORIGIN') ?: $_SERVER['MAIL_ORIGIN'] ?? null;
+    $to = getenv('MAIL_DESTINATION');
+    $from = getenv('MAIL_ORIGIN');
 
     if (!$to || !$from) {
-     die("Fehler: Konnte die .env-Variablen nicht laden");}
+    die("Fehler: Konnte die .env-Variablen nicht laden");}
     
     $subject = "Neue Formularmeldung";
     $headers = "From: $from\r\n" .
