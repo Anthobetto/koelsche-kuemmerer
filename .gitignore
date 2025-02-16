@@ -2,17 +2,11 @@
 .env
 
 # Ignorar dependencias y caché
+node_modules/
 venv/
 __pycache__/
 
 # Otros archivos temporales
-*.pyc
-*.pyo
-*.pyd
 *.log
-
-# Ignorar imágenes pero mantener la carpeta
-public/images/
-node_modules
-build/
 .DS_Store
+build/
