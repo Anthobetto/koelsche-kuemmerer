@@ -281,7 +281,7 @@ export const Grad = () => {
                 <div className="col-12 col-sm-6 col-md-4 col-lg-4 mt-3">
                     <img
                         className="rounded-circle"
-                        src="/images/Grünflächenpflege.jpg"
+                        src="/images/Grünflächenpflege.png"
                         alt="Sonstige Dienstleistungen"
                         width="140"
                         height="140"
