@@ -4,10 +4,10 @@ export const Contact = () => {
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         setLoading(true);
 
-        const formData = new FormData(e.target); 
+        const formData = new FormData(e.target);
         try {
             const response = await fetch("https://koelsche-kuemmerer.koeln/send_email.php", {
                 method: "POST",
@@ -67,6 +67,23 @@ export const Contact = () => {
                                             id="email"
                                             name="email"
                                             placeholder="name@beispiel.de"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="number" className="form-label">Telefonnummer</label>
+                                    <div className="input-group">
+                                        <span className="input-group-text">
+                                            <i className="fas fa-phone"></i>
+                                        </span>
+                                        <input
+                                            type="tel"
+                                            className="form-control"
+                                            id="number"
+                                            name="number"
+                                            placeholder="+49 123 456789"
                                             required
                                         />
                                     </div>
