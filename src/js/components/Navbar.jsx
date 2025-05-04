@@ -18,8 +18,25 @@ export const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <Link className="navbar-brand" to="/">
-          <img height="50" src="/images/Home-button.png" alt="Koelsche-Kuemmerer" />
+        <Link
+          className="navbar-brand d-flex align-items-center"
+          to="/"
+          style={{
+            marginRight: "auto", 
+          }}
+        >
+          <div style={{ width: "72px" }}> {/* 60px x 1.2 */}
+            <img
+              src="/images/image010.png"
+              alt="Koelsche-Kuemmerer"
+              height="50"
+              style={{
+                transform: "scale(1.2)",
+                transformOrigin: "left center",
+                display: "block",
+              }}
+            />
+          </div>
         </Link>
 
         <div className="collapse navbar-collapse justify-content-center mx-auto" id="navbarNav">
