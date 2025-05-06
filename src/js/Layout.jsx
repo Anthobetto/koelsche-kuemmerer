@@ -8,6 +8,7 @@ import { Überuns } from './pages/Überuns.jsx';
 import { Footer } from "./components/Footer.jsx";
 import { AppProvider } from './store/appContext.js';
 import { Datenschutz } from './pages/Datenschutz.jsx';
+import { Impressum } from './pages/Impressum.jsx';
 
 export const Layout = () => {
     return (
@@ -22,6 +23,7 @@ export const Layout = () => {
                             <Route element={<Grad />} path="360-grad-service" />
                             <Route element={<Überuns />} path="über-uns" />
                             <Route element={<Datenschutz />} path="datenschutz" />
+                            <Route element={<Impressum />} path="impressum" />
                         </Routes>
                     </div>
                     <Footer />
