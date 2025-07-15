@@ -38,6 +38,7 @@ export const Contact = () => {
                         <div className="card-body p-5">
                             <h2 className="text-center mb-4">Kontaktformular</h2>
                             <form onSubmit={handleSubmit}>
+                                {/* ...campos del formulario... */}
                                 <div className="mb-3">
                                     <label htmlFor="name" className="form-label">Name</label>
                                     <div className="input-group">
@@ -110,6 +111,18 @@ export const Contact = () => {
                                     </button>
                                 </div>
                             </form>
+
+                            {/* NUEVA SECCIÓN DE CONTACTO */}
+                            <hr className="my-4" />
+                            <div className="mt-4">
+                                <h5 className="text-center mb-3">Du kannst uns auch erreichen über:</h5>
+                                <ul className="list-unstyled text-center">
+                                    <li><i className="fas fa-phone-alt me-2"></i>Telefon: <a href="tel:+491722956731">+49 172 2956731</a></li>
+                                    <li><i className="fas fa-envelope me-2"></i>Email: <a href="mailto:kontakt@beispiel.de">juergen.loschke@koelsche-kuemmerer.koeln</a></li>
+                                    <li><i className="fas fa-map-marker-alt me-2"></i>Adresse: Schwalbacher Str. 51, Köln</li>
+                                </ul>
+                            </div>
+                            {/* FIN DE NUEVA SECCIÓN */}
                         </div>
                     </div>
                 </div>

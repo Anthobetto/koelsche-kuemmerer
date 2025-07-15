@@ -13,12 +13,12 @@ export const Footer = () => {
 
                 <ul className="nav col-12 col-md-4 justify-content-center justify-content-md-end list-unstyled d-flex flex-wrap">
                     <li className="ms-3">
-                        <Link className="text-white" to="https://instagram.com/">
+                        <Link className="text-white" to="/">
                             <i className="fab fa-instagram" style={{ fontSize: "24px" }}></i>
                         </Link>
                     </li>
                     <li className="ms-3">
-                        <Link className="text-white" to="https://facebook.com/">
+                        <Link className="text-white" to="/">
                             <i className="fab fa-facebook" style={{ fontSize: "24px" }}></i>
                         </Link>
                     </li>
